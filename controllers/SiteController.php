@@ -10,7 +10,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use yii\helpers\Html;
-
+use yii\web\Application;
 
 class SiteController extends Controller
 {
@@ -63,8 +63,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $message = "some info";
-
+        $message = 'testing';
         return $this->render('index', [
             'message' => $message,
         ]);

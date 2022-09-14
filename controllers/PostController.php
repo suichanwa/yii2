@@ -7,6 +7,8 @@ use app\models\PostSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii;
+
 
 /**
  * PostController implements the CRUD actions for Post model.
@@ -130,5 +132,9 @@ class PostController extends Controller
         }
 
         throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
+    }
+    
+    public function actionPost(){
+        return $this->render('post');
     }
 }

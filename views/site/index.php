@@ -18,5 +18,15 @@ $login = 'name';
 
         <h3>currnet url</h3>
         <?= Url::previous()?>
+
+        <?php
+            if (Yii::$app->user->isGuest) {
+                echo Html::a('login', ['site/login'], ['class' => 'btn btn-default']);
+            } 
+            else {
+                echo Html::a('about', ['site/about'], ['class' => 'btn btn-default']);
+            }
+        ?>
+
     </div>
 </div>
