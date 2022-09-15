@@ -6,7 +6,10 @@ use app\models\Post;
 use app\models\PostSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
+use yii\helpers\ArrayHelper;
 use yii\filters\VerbFilter;
+use yii\filters\ContentNegotiator;
+use yii\web\Response;
 use yii;
 
 
@@ -18,20 +21,20 @@ class PostController extends Controller
     /**
      * @inheritDoc
      */
+    public $serializer = 'tuyakhov\jsonapi\Serializer';
+
     public function behaviors()
     {
-        return array_merge(
-            parent::behaviors(),
-            [
-                'verbs' => [
-                    'class' => VerbFilter::className(),
-                    'actions' => [
-                        'delete' => ['POST'],
-                    ],
+        return ArrayHelper::merge(parent::behaviors(), [
+            'contentNegotiator' => [
+                'class' => ContentNegotiator::className(),
+                'formats' => [
+                    'application/vnd.api+json' => Response::FORMAT_JSON,
                 ],
             ]
-        );
+        ]);
     }
+ 
 
     /**
      * Lists all Post models.

@@ -19,6 +19,7 @@
         "yiisoft/yii2-bootstrap5": "~2.0.2",
         "yiisoft/yii2-symfonymailer": "~2.0.3",
         "yiimaker/yii2-email-templates": "^4.1",
+        "tuyakhov/yii2-json-api": "*",
         "kartik-v/yii2-icons": "@dev"
     },
     "require-dev": {
