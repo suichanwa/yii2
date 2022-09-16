@@ -1,22 +1,22 @@
 <?php
 
+use yii\db\cubrid\Schema;
 use yii\db\Migration;
-use yii\db\Schema;
+
 /**
- * Class m220913_063840_nmae
+ * Class m220916_065326_name
  */
-class m220913_063840_nmae extends Migration
+class m220916_065326_name extends Migration
 {
     /**
      * {@inheritdoc}
      */
     public function safeUp()
     {
-        $this->createTable('post', [
-            'id' => $this->primaryKey(),
-            'post_id' => Schema::TYPE_TEXT,
+        $this->createTable('value', [
+            'name' => Schema::TYPE_STRING,
+            'id' => Schema::TYPE_INTEGER,
         ]);
-
     }
 
     /**
@@ -24,7 +24,7 @@ class m220913_063840_nmae extends Migration
      */
     public function safeDown()
     {
-        echo "m220913_063840_nmae cannot be reverted.\n";
+        echo "m220916_065326_name cannot be reverted.\n";
 
         return false;
     }
@@ -38,7 +38,7 @@ class m220913_063840_nmae extends Migration
 
     public function down()
     {
-        echo "m220913_063840_nmae cannot be reverted.\n";
+        echo "m220916_065326_name cannot be reverted.\n";
 
         return false;
     }

@@ -1,3 +1,10 @@
+<?php
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
+
+$this->title = "login";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,12 +14,15 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
-    $html = file_get_contents('document.html');
+    <div>
+        <h1> <?= Html::encode($title) ?> </h1>
 
-    
-    print($html);
-    ?>
+        <?php $form = ActiveForm::begin(); ?>
+            <?= $form->field($model, 'username') ?>
+            <?= $form->field($model, 'password')->passwordInput() ?>
+            <?= Html::submitButton('Login') ?>
+        <?php ActiveForm::end(); ?>
 
+    </div>
 </body>
 </html>
